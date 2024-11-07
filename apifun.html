@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Joke API</title>
+</head>
+<body>
+    <h1>Joke!</h1>
+    <div id="joke-container"></div>
+    <script>
+        fetch('https://official-joke-api.appspot.com/random_joke')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('joke-container').innerHTML = `
+                <p><strong>Setup:</strong> ${data.setup}</p>
+                <p><strong>Punchline:</strong> ${data.punchline}</p>
+        `;
+    })
+    .catch(error => console.error('Error fetching joke:', error));
+    </script>
+    <h2>Answers about the API</h2>
+
+    <p><strong>Description of the API selected:</strong> This page uses the Official Joke API. This API provides access to a collection of jokes. It has multiple endpoints, and the one we’re using, random_joke returns a random joke with both a setup and punchline.</p>
+
+    <p><strong>Source and Documentation:</strong> The Official Joke API can be found at https://official-joke-api.appspot.com/. It offers multiple endpoints for fetching jokes, including random jokes, programming-related jokes, and more.</p>
+
+    <p><strong>Options/Parameters used:</strong> For this example, we used the /random_joke endpoint. No additional parameters were required in the query string to retrieve a result, since calling https://official-joke-api.appspot.com/random_joke provides a JSON object with a random joke.</p>
+
+    <p><strong>Applications where this API would be helpful:</strong></p>
+    <ul>
+        <li>Entertainment websites or apps: This API can be used in entertainment-focused platforms that feature jokes or daily humor content.</li>
+        <li>Chatbots: This API is useful for chatbots to make interactions more engaging by adding humor or breaking the ice during conversations.</li>
+    </ul>
+</body>
+</html>
+</body>
+</html>
